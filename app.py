@@ -29,7 +29,7 @@ st.set_page_config(
 
 MODEL_NAME = "gemini-2.5-pro"
 
-@st.cache_resource
+@st.cache_resource(ttl=3600)
 def configure_gemini(api_key):
     """Configura la API de Gemini si la clave es válida."""
     if not api_key:
